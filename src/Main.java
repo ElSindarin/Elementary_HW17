@@ -4,18 +4,16 @@ public class Main {
         System.out.println("Собираемся на прогулку! Не забудьте одеть обувь, штаны, рубашку и, конечно же, головной убор!\n");
         WalkingPerson person = new WalkingPerson(false, false, true , true);
         //failure
-        tryToGoOutside(person);
+        goForAWalk(person);
         person.setBootsOn(true);
         //failure
-        tryToGoOutside(person);
+        goForAWalk(person);
         person.setHatOn(true);
         //success
-        tryToGoOutside(person);
+        goForAWalk(person);
         person.setShirtOn(false);
         //failure
-        tryToGoOutside(person);
-
-
+        goForAWalk(person);
     }
 
     public static void checkReadiness(WalkingPerson walkingPerson) throws IncompleteClothingException{
@@ -27,7 +25,7 @@ public class Main {
         }
     }
 
-    public static void tryToGoOutside (WalkingPerson walkingPerson) {
+    public static void goForAWalk (WalkingPerson walkingPerson) {
         try {
             checkReadiness(walkingPerson);
         } catch (IncompleteClothingException e) {
